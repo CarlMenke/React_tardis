@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Doctor Who's Police Box
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Doctors Box](https://i.pinimg.com/736x/b4/a4/fb/b4a4fb83cc020ecddeb08c04af1fe2f3.jpg)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Doctor Who's Police Box is a T.A.R.D.I.S (Time and Relative Dimension In Space), a fantastical space ship that can fly through time and space and other mind-bending-ly impossible situations. It can go _anywhere_.
 
-### `npm start`
+Today, you're going to help the T.A.R.D.I.S. navigate through a React App in the form of an object
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```js
+tardis = {
+  name: 'Time and Relative Dimension in Space',
+  caps: false,
+}
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone this repo and cd into it.
+- Run `npx create-react-app tardis` and cd into that app to get started.
 
-### `npm run build`
+## Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To aid in visualization here is some css.
+Every div will have a blue border and have some space around it for easy distinction between divs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```css
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+body {
+  margin: 1em;
+  padding: 1em;
+  font-family: 'Poppins', sans-serif;
+  background: #FEFFE9;
+  text-align: center;
+}
 
-### `npm run eject`
+div {
+  margin: auto;
+  width: 80%;
+  box-shadow: 0 0 8px dodgerblue;
+  padding: 1em;
+  background: white;
+}
+```
+![css visual](https://i.imgur.com/3e0aPea.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Remove excessive code from `App` component class
+- render a `div`
+- inside the `div`, put an `h3` that will render the `name` property from the state
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+T.A.R.D.I.S. properties inside state:
+```js
+tardis: {
+  name: 'Time and Relative Dimension in Space',
+  caps: false,
+}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Add a function that gets called on click and changes the text
+- On click, the text will change from caps to lower case and change the caps property.
+- Get the click function to work
 
-## Learn More
+### Creating New Components
+- These new components tiny and you'll be working between them. It's ok to do this all in one file `App.js`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Create a New Function Component `DivOne`
+- have it render a div
+- move the h3 to inside the div in this component
+- work on passing the data from state down
+- work on getting the click function work properly
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Create a New Function Component `DivTwo`
+- have it render a div
+- move the h3 to inside the div in this component
+- work on passing the data from DivOne down
+- work on getting the click function to work properly
 
-### Code Splitting
+3. Create a New Function Component `DivThree`
+- have it render a div
+- move the h3 to inside the div in this component
+- work on passing the data from DivTwo down
+- work on getting the click function to work properly
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Create another `DivThree` Inside `DivTwo`
+- how should it render?
+- will the function affect one or both divThrees?
+- should it affect one or both?
+- refactor your code so that each tardis is updating independent of the other one, if it isn't already
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![nearly finished](https://i.imgur.com/efZ6fZG.png)
